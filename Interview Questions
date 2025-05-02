@@ -1,0 +1,42 @@
+1. How does the KNN algorithm work?
+KNN (K-Nearest Neighbors) is an instance-based learning algorithm that classifies a data point based on how its neighbors are classified. 
+It:
+Computes the distance (usually Euclidean) between the query point and all training data.
+Selects the K nearest neighbors.
+Assigns the class label by majority vote among these neighbors.
+
+2. How do you choose the right K?
+Choosing K is critical:
+Too small (e.g., K=1): Very sensitive to noise, overfitting risk.
+Too large: Can smooth out distinctions between classes, underfitting.
+A good approach is to try several values using cross-validation and pick the one that gives the best accuracy on validation data.
+
+3. Why is normalization important in KNN?
+KNN relies on distance calculations, so features with larger scales can dominate the result. 
+Normalization (e.g., Min-Max or StandardScaler) ensures all features contribute equally, improving model performance.
+
+4. What is the time complexity of KNN?
+Training time: O(1) (no actual training).
+Prediction time: O(n × d), where n is the number of training samples and d is the number of features—because distance must be computed to each point.
+
+5. What are pros and cons of KNN?
+Pros:
+Simple and intuitive.
+No training phase.
+Works well with small datasets.
+
+Cons:
+Slow prediction on large datasets.
+Sensitive to irrelevant or redundant features.
+Poor performance with high-dimensional data (curse of dimensionality).
+
+6. Is KNN sensitive to noise?
+Yes, very. A noisy data point can significantly affect classification, especially when K is small. Using a larger K and preprocessing (e.g., removing outliers) helps mitigate this.
+
+7. How does KNN handle multi-class problems?
+KNN naturally supports multi-class classification. The algorithm counts the number of neighbors from each class and predicts the majority class among the K neighbors.
+
+8. What’s the role of distance metrics in KNN?
+The distance metric (e.g., Euclidean, Manhattan, Minkowski) determines how "closeness" is measured. The choice affects classification accuracy, especially when features have different distributions or scales.
+
+              *****            
